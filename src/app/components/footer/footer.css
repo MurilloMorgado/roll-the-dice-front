@@ -1,0 +1,16 @@
+footer {
+  background: rgba(226, 226, 226, 0.897);
+  height: 4vh;
+  width: 100%;
+}
+
+.section-footer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  color: #000;
+}
