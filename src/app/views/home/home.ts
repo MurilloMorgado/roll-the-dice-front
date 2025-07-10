@@ -41,7 +41,9 @@ export class Home implements OnInit {
   }
 
   async buscarHistoricoDeRolagem() {
-    this.historicoRolagem = await firstValueFrom(this.rolagemDeDadosService.listarHistorico());
+        this.rolagemDeDadosService.listarHistorico().subscribe((historico) => {
+      this.historicoRolagem = historico;
+    });
   }
 
   async rolarDado() {
@@ -51,7 +53,7 @@ export class Home implements OnInit {
 
       this.resultado = await firstValueFrom(this.rolagemDeDadosService.rolarDado(dadoRolado));
 
-      console.log(this.resultado);
+      await this.buscarHistoricoDeRolagem();
 
     }
   }
