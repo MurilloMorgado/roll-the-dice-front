@@ -1,0 +1,23 @@
+header {
+  height: 5vh;
+}
+
+body {
+  height: 90vh;
+}
+
+footer {
+  height: 5vh;
+}
+
+.sessao-secundaria {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 10px 0px;
+
+}
+
+::ng-deep .p-button{
+  width: 200px;
+}
