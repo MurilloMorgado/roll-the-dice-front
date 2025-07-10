@@ -35,7 +35,26 @@
         </div>
       </div>
       <div class="sessao-resultado">
-        <p>tabe;a</p>
+        <div class="card">
+
+    <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="400px" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template #header>
+            <tr>
+                <th>ID</th>
+                <th>Lado</th>
+                <th>Resultado</th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-historicoRolagem>
+            <tr>
+                <td>{{historicoRolagem.id}}</td>
+                <td>{{historicoRolagem.lado}}</td>
+                <td>{{historicoRolagem.resultado}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    
+</div>
       </div>
     </section>
   </section>
