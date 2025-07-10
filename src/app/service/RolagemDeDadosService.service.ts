@@ -17,7 +17,7 @@ export class RolagemDeDadosService {
     return this.http.get<HistoricoRolagem[]>(this.apiUrl);
   }
 
-  rolarDado(dado: Dado): Observable<void> {
-    return this.http.post<void>(this.apiUrl, dado);
+  rolarDado(dado: Dado): Observable<Dado> {
+    return this.http.post<Dado>(this.apiUrl, dado);
   }
 }

@@ -7,23 +7,8 @@
 
     <section class="sessao-principal">
       <div class="sessao-secundaria">
-        <div class="card flex justify-center botao">
-          <p-button label="D2" />
-        </div>
-        <div class="card flex justify-center botao">
-          <p-button label="D4" />
-        </div>
-        <div class="card flex justify-center botao">
-          <p-button label="D6" />
-        </div>
-        <div class="card flex justify-center botao">
-          <p-button label="D8" />
-        </div>
-        <div class="card flex justify-center botao">
-          <p-button label="D10" />
-        </div>
-        <div class="card flex justify-center botao">
-          <p-button label="D20" />
+        <div class="card flex justify-center botao" *ngFor="let dado of dados">
+          <p-button label="{{dado.label}}" (onClick)="selecionarDado(dado.lados)" />
         </div>
       </div>
     </section>
@@ -31,30 +16,31 @@
       <div>
         <img class="dado" src="/d20.png" alt="Dado D20" />
         <div class="card flex justify-center botao">
-          <p-button label="Jogar Dado" />
+           <p-button label="Rolar Dado" (onClick)="rolarDado()" [disabled]="dadoSelecionado === null" />
         </div>
       </div>
       <div class="sessao-resultado">
         <div class="card">
 
-    <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="400px" [tableStyle]="{'min-width': '50rem'}">
-        <ng-template #header>
-            <tr>
+          <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="400px"
+            [tableStyle]="{'min-width': '50rem'}">
+            <ng-template #header>
+              <tr>
                 <th>ID</th>
                 <th>Lado</th>
                 <th>Resultado</th>
-            </tr>
-        </ng-template>
-        <ng-template #body let-historicoRolagem>
-            <tr>
+              </tr>
+            </ng-template>
+            <ng-template #body let-historicoRolagem>
+              <tr>
                 <td>{{historicoRolagem.id}}</td>
                 <td>{{historicoRolagem.lado}}</td>
                 <td>{{historicoRolagem.resultado}}</td>
-            </tr>
-        </ng-template>
-    </p-table>
-    
-</div>
+              </tr>
+            </ng-template>
+          </p-table>
+
+        </div>
       </div>
     </section>
   </section>
