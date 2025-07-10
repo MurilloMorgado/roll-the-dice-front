@@ -2,7 +2,7 @@ header {
   height: 6vh;
 }
 
-body {
+.body {
   height: 90vh;
 }
 
@@ -20,4 +20,15 @@ footer {
 
 ::ng-deep .p-button{
   width: 200px;
+}
+
+.dado {
+  width: 200px;
+}
+
+.sessao-rolagem {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
