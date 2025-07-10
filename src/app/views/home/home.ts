@@ -22,11 +22,11 @@ export class Home implements OnInit {
   resultado: Dado | null = null;
   // Array de dados (lado)
   dados = [
-    { label: 'D2', lados: 2 },
     { label: 'D4', lados: 4 },
     { label: 'D6', lados: 6 },
     { label: 'D8', lados: 8 },
     { label: 'D10', lados: 10 },
+    { label: 'D12', lados: 12 },
     { label: 'D20', lados: 20 }
   ];
 

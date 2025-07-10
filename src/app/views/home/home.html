@@ -14,9 +14,14 @@
     </section>
     <section class="sessao-rolagem">
       <div>
-        <img class="dado" src="/d20.png" alt="Dado D20" />
+        <!-- Imagem quando nenhum dado for selecionado -->
+        <img *ngIf="dadoSelecionado === null" class="dado" src="/d.png" alt="Dado com todos os lados" />
+
+        <!-- Imagem do dado selecionado -->
+        <img *ngIf="dadoSelecionado !== null" class="dado" [src]="'./d' + dadoSelecionado + '.png'" alt="Dado" />
+        
         <div class="card flex justify-center botao">
-           <p-button label="Rolar Dado" (onClick)="rolarDado()" [disabled]="dadoSelecionado === null" />
+          <p-button label="Rolar Dado" (onClick)="rolarDado()" [disabled]="dadoSelecionado === null" />
         </div>
       </div>
       <div class="sessao-resultado">
