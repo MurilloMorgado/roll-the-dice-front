@@ -20,6 +20,7 @@ export class Home implements OnInit {
 
   dadoSelecionado: number | null = null;
   resultado: Dado | null = null;
+  rolandoDado: boolean = false;
   // Array de dados (lado)
   dados = [
     { label: 'D4', lados: 4 },
@@ -47,13 +48,22 @@ export class Home implements OnInit {
   }
 
   async rolarDado() {
+    
     if (this.dadoSelecionado !== null) {
+      this.rolandoDado = true;
+      
       const dadoRolado = new Dado();
       dadoRolado.lado = this.dadoSelecionado;
 
-      this.resultado = await firstValueFrom(this.rolagemDeDadosService.rolarDado(dadoRolado));
+ setTimeout(async () => {
+        this.resultado = await firstValueFrom(this.rolagemDeDadosService.rolarDado(dadoRolado));
 
-      await this.buscarHistoricoDeRolagem();
+        // Atualiza o histórico de rolagem
+        await this.buscarHistoricoDeRolagem();
+        
+        // Desativa a animação de rotação e mostra o dado final
+        this.rolandoDado = false;
+      }, 1000); // Duração da animação (1 segundo)
 
     }
   }

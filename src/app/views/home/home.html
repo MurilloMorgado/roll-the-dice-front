@@ -18,8 +18,11 @@
         <img *ngIf="dadoSelecionado === null" class="dado" src="/d.png" alt="Dado com todos os lados" />
 
         <!-- Imagem do dado selecionado -->
-        <img *ngIf="dadoSelecionado !== null" class="dado" [src]="'./d' + dadoSelecionado + '.png'" alt="Dado" />
-        
+<img *ngIf="dadoSelecionado !== null" 
+     class="dado" 
+     [ngClass]="{ 'dado-rolando': rolandoDado }" 
+     [src]="'./d' + dadoSelecionado + '.png'" alt="Dado" />
+
         <div class="card flex justify-center botao">
           <p-button label="Rolar Dado" (onClick)="rolarDado()" [disabled]="dadoSelecionado === null" />
         </div>
