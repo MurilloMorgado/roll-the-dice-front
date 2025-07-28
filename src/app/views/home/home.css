@@ -23,8 +23,14 @@ main {
   .section-die {
     display: flex;
 
-    img {
+
+
+    .img-dado {
       width: 130px;
+    }
+    .img-dado:hover {
+      filter: drop-shadow(0 0 0px white) drop-shadow(0 0 10px white);
+      cursor: pointer;
     }
   }
 }

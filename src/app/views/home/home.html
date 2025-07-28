@@ -8,13 +8,12 @@
     </div>
 
     <div class="section-die">
-      <div class="card flex justify-center botao" *ngFor="let dado of dados">
-        <img src="d4.png" alt="" (onClick)="selecionarDado(dado.lados)">
-      </div>
+      <img class="img-dado" [src]="'/d' + dado.lados + '.png'" [alt]="'Dado de ' + dado.lados + ' lados'"
+        (click)="selecionarDado(dado.lados)" *ngFor="let dado of dados">
 
     </div>
     <div class="roll">
-      <p-button>Roll</p-button>
+      <p-button (click)="rolarDado()">Roll</p-button>
     </div>
 
   </section>
