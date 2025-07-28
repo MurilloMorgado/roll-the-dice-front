@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -17,10 +17,10 @@ import { Dado } from '../../models/dado';
   styleUrl: './home.css'
 })
 export class Home implements OnInit {
+@ViewChild('audioDado') audioDado!: ElementRef<HTMLAudioElement>;
 
   dadoSelecionado: number | null = null;
   resultado: Dado | null = null;
-  rolandoDado: boolean = false;
   // Array de dados (lado)
   dados = [
     { label: 'D4', lados: 4 },
@@ -50,7 +50,6 @@ export class Home implements OnInit {
   async rolarDado() {
     
     if (this.dadoSelecionado !== null) {
-      this.rolandoDado = true;
       
       const dadoRolado = new Dado();
       dadoRolado.lado = this.dadoSelecionado;
@@ -61,9 +60,8 @@ export class Home implements OnInit {
         // Atualiza o histórico de rolagem
         await this.buscarHistoricoDeRolagem();
         
-        // Desativa a animação de rotação e mostra o dado final
-        this.rolandoDado = false;
-      }, 1000); // Duração da animação (1 segundo)
+        this.audioDado.nativeElement.play();
+      }); // Duração da animação (1 segundo)
 
     }
   }
