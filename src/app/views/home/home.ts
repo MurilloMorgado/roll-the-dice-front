@@ -14,10 +14,10 @@ import { Dado } from '../../models/dado';
   selector: 'app-home',
   imports: [ButtonModule, Header, Footer, TableModule, CommonModule],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
 export class Home implements OnInit {
-@ViewChild('audioDado') audioDado!: ElementRef<HTMLAudioElement>;
+  @ViewChild('audioDado') audioDado!: ElementRef<HTMLAudioElement>;
 
   dadoSelecionado: number | null = null;
   resultado: Dado | null = null;
@@ -42,26 +42,25 @@ export class Home implements OnInit {
   }
 
   async buscarHistoricoDeRolagem() {
-        this.rolagemDeDadosService.listarHistorico().subscribe((historico) => {
+    this.rolagemDeDadosService.listarHistorico().subscribe((historico) => {
       this.historicoRolagem = historico;
     });
   }
 
   async rolarDado() {
-    
+
     if (this.dadoSelecionado !== null) {
-      
+
       const dadoRolado = new Dado();
       dadoRolado.lado = this.dadoSelecionado;
 
- setTimeout(async () => {
+      setTimeout(async () => {
         this.resultado = await firstValueFrom(this.rolagemDeDadosService.rolarDado(dadoRolado));
 
-        // Atualiza o histórico de rolagem
         await this.buscarHistoricoDeRolagem();
-        
+
         this.audioDado.nativeElement.play();
-      }); // Duração da animação (1 segundo)
+      });
 
     }
   }
