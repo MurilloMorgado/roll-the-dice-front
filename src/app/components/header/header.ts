@@ -24,9 +24,13 @@ export class Header implements OnInit {
         icon: 'pi pi-home',
       },
       {
-        label: 'Projects',
+        label: 'About',
         icon: 'pi pi-search',
         badge: '3',
+      },
+      {
+        label: 'Contat',
+        icon: 'pi pi-search',
       },
     ];
   }

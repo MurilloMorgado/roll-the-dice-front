@@ -4,6 +4,8 @@ import { providePrimeNG } from 'primeng/config';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import Aura from '@primeuix/themes/aura';
 import { provideHttpClient } from '@angular/common/http';
+import { withFetch } from '@angular/common/http';
+
 
 
 import { routes } from './app.routes';
@@ -15,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes), provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     providePrimeNG({
       theme: {
         preset: Aura
