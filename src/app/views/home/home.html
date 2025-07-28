@@ -9,9 +9,10 @@
 
     <div class="section-die">
       <img class="img-dado" [src]="'/d' + dado.lados + '.png'" [alt]="'Dado de ' + dado.lados + ' lados'"
-        (click)="selecionarDado(dado.lados)" *ngFor="let dado of dados">
-
+        [ngClass]="{'dado-selecionado': dadoSelecionado === dado.lados}" (click)="selecionarDado(dado.lados)"
+        *ngFor="let dado of dados">
     </div>
+
     <div class="button">
       <button class="roll" (click)="rolarDado()">Roll</button>
     </div>
