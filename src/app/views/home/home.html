@@ -12,8 +12,13 @@
         (click)="selecionarDado(dado.lados)" *ngFor="let dado of dados">
 
     </div>
-    <div class="roll">
-      <p-button (click)="rolarDado()">Roll</p-button>
+    <div class="button">
+      <button class="roll" (click)="rolarDado()">Roll</button>
+    </div>
+
+    <div class="resultado">
+      <img src="/pergaminho.png" alt="">
+      <p>{{resultado?.resultado}}</p>
     </div>
 
   </section>
@@ -22,12 +27,11 @@
 
     <div class="pergaminho">
 
-      <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="350px" [tableStyle]="{'min-width': '50rem'}"
+      <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="350px" [tableStyle]="{'min-width': '10rem'}"
         class="rpg-table">
 
         <ng-template pTemplate="header">
           <tr>
-            <th>ID</th>
             <th>Lado</th>
             <th>Resultado</th>
           </tr>
@@ -35,7 +39,6 @@
 
         <ng-template pTemplate="body" let-historicoRolagem>
           <tr>
-            <td>{{historicoRolagem.id}}</td>
             <td>{{historicoRolagem.lado}}</td>
             <td>{{historicoRolagem.resultado}}</td>
           </tr>
