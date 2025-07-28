@@ -26,11 +26,12 @@ export class Header implements OnInit {
       {
         label: 'About',
         icon: 'pi pi-search',
-        badge: '3',
       },
       {
         label: 'Contat',
         icon: 'pi pi-search',
+        url: 'https://www.linkedin.com/in/murillo-morgado/',
+        target: '_blank'
       },
     ];
   }
