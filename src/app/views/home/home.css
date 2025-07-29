@@ -26,6 +26,8 @@ main {
 
   .section-die {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 
     .img-dado {
@@ -46,8 +48,6 @@ main {
     }
   }
 
-
-
   .resultado {
     position: relative;
     display: inline-block;
@@ -67,7 +67,6 @@ main {
       color: #000;
       margin: 0;
       pointer-events: none;
-      /* impede que clique no texto afete algo */
     }
   }
 
@@ -86,8 +85,6 @@ main {
 ::ng-deep .p-button {
   width: 200px;
 }
-
-
 
 /* Estilizaçao separada do botção */
 .button {
@@ -143,4 +140,50 @@ main {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+/* Mobile (phones) */
+@media (max-width: 767px) {
+
+  main {
+    flex-direction: column;
+  }
+
+  .section-one {
+
+    .titulo {
+      font-size: 18px;
+    }
+
+    .button {
+
+    }
+
+    .section-die {
+
+      .img-dado {
+        width: 60px;
+      }
+    }
+
+    .resultado{
+
+      img {
+        width: 250px;
+      }
+
+      p {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .section-two {
+    min-height: 0px;
+  }
+}
+
+/* Tablet (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
 }

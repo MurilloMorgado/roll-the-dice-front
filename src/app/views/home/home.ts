@@ -43,7 +43,7 @@ export class Home implements OnInit {
 
   async buscarHistoricoDeRolagem() {
     this.rolagemDeDadosService.listarHistorico().subscribe((historico) => {
-      this.historicoRolagem = historico;
+      this.historicoRolagem = historico.reverse();
     });
   }
 
