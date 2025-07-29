@@ -22,10 +22,12 @@ export class Header implements OnInit {
       {
         label: 'Home',
         icon: 'pi pi-home',
+        routerLink: '/home'
       },
       {
         label: 'About',
         icon: 'pi pi-search',
+        routerLink: '/about'
       },
       {
         label: 'Contat',

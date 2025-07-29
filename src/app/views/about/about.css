@@ -1,0 +1,41 @@
+main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/tavern-balcao.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-one {
+  background-image: url('/pergaminho-folha.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1200px;
+  min-height: 600px;
+
+  .sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 60px;
+    color: black;
+
+    h2 {
+      font-size: 26px;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 18px;
+    }
+
+    ul {
+      
+    }
+  }
+
+}
