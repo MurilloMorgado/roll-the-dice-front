@@ -20,17 +20,17 @@ export class Header implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Home',
+        label: 'Inicio',
         icon: 'pi pi-home',
         routerLink: '/home'
       },
       {
-        label: 'About',
+        label: 'Sobre',
         icon: 'pi pi-search',
         routerLink: '/about'
       },
       {
-        label: 'Contat',
+        label: 'Contato',
         icon: 'pi pi-search',
         url: 'https://www.linkedin.com/in/murillo-morgado/',
         target: '_blank'

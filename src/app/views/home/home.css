@@ -20,7 +20,7 @@ main {
     font-family: "Cinzel Decorative", serif;
     font-size: 48px;
     color: #4b2e0f;
-    text-shadow: 2px 2px 4px rgba(134, 134, 134, 0.6);
+    text-shadow: 2px 2px 4px rgba(218, 218, 218, 0.767);
 
   }
 
@@ -54,7 +54,7 @@ main {
 
     img {
       display: block;
-      /* width: 300px;  */
+      width: 560px;
     }
 
     p {
@@ -72,12 +72,10 @@ main {
 
 }
 
-.section-two {
+.historico {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 400px;
-  padding: 20px;
+  justify-content: end;
+  width: 100%;
 
   ::ng-deep .botao-historico .p-button {
     font-size: 18px;
@@ -163,6 +161,13 @@ main {
 
   .section-one {
     width: 100vw;
+
+    .historico {
+      order: 5;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
     .titulo {
       font-size: 18px;
     }
@@ -188,19 +193,24 @@ main {
     }
   }
 
-  .section-two {
-    min-height: 0px;
+  .historico {
+    padding: 5px;
+
+    ::ng-deep .botao-historico .p-button {
+      font-size: 14px;
+    }
   }
 }
 
 /* Tablet (portrait) */
 @media (min-width: 768px) and (max-width: 1024px) {
-    main {
+  main {
     flex-direction: column;
   }
 
   .section-one {
     width: 100vw;
+
     .titulo {
       font-size: 28px;
     }
@@ -224,8 +234,12 @@ main {
     }
   }
 
-  .section-two {
-    min-height: 0px;
+  .historico {
+    padding: 5px;
+
+    ::ng-deep .botao-historico .p-button {
+      font-size: 14px;
+    }
   }
 }
 
@@ -238,8 +252,6 @@ main {
       font-size: 38px;
     }
 
-    .button {}
-
     .section-die {
 
       .img-dado {
@@ -250,11 +262,19 @@ main {
     .resultado {
 
       img {
-        width: 420px;
+        width: 360px;
       }
 
       p {
         font-size: 100px;
+      }
+    }
+
+    .historico {
+      padding: 5px;
+
+      ::ng-deep .botao-historico .p-button {
+        font-size: 14px;
       }
     }
   }

@@ -3,33 +3,9 @@
 
   <section class="section-one">
 
-    <div class="titulo">
-      <h1>Select Die</h1>
-    </div>
-
-    <div class="section-die">
-      <img class="img-dado" [src]="'/d' + dado.lados + '.png'" [alt]="'Dado de ' + dado.lados + ' lados'"
-        [ngClass]="{'dado-selecionado': dadoSelecionado === dado.lados}" (click)="selecionarDado(dado.lados)"
-        *ngFor="let dado of dados">
-    </div>
-
-    <div class="button">
-      <button class="roll" (click)="rolarDado()">Roll</button>
-      <audio #audioDado src="/dice-rolling.mp3"></audio>
-    </div>
-
-    <div class="resultado">
-      <img src="/pergaminho.png" alt="">
-      <p>{{resultado?.resultado}}</p>
-    </div>
-
-  </section>
-
-  <section class="section-two">
-
-    <div class="card flex justify-center">
-      <p-button class="botao-historico" (click)="showDialog()" label="Historico" />
-      <p-dialog header="Header" [(visible)]="visible" [modal]="true"
+    <div class="card flex justify-center historico">
+      <p-button class="botao-historico" (click)="showDialog()" label="Histórico" />
+      <p-dialog header="Histórico" [(visible)]="visible" [modal]="true"
         [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '30vw' }" [draggable]="false"
         [resizable]="false">
         <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="350px"
@@ -51,6 +27,26 @@
 
         </p-table>
       </p-dialog>
+    </div>
+
+    <div class="titulo">
+      <h1>Selecionar Dado</h1>
+    </div>
+
+    <div class="section-die">
+      <img class="img-dado" [src]="'/d' + dado.lados + '.png'" [alt]="'Dado de ' + dado.lados + ' lados'"
+        [ngClass]="{'dado-selecionado': dadoSelecionado === dado.lados}" (click)="selecionarDado(dado.lados)"
+        *ngFor="let dado of dados">
+    </div>
+
+    <div class="button">
+      <button class="roll" (click)="rolarDado()">Jogar</button>
+      <audio #audioDado src="/dice-rolling.mp3"></audio>
+    </div>
+
+    <div class="resultado">
+      <img src="/pergaminho.png" alt="">
+      <p>{{resultado?.resultado}}</p>
     </div>
 
   </section>
