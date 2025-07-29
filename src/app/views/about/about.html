@@ -1,0 +1,31 @@
+<app-header></app-header>
+<main>
+  <section class="section-one">
+    <div class="sobre">
+      <h2>Rolagem de Dados de RPG com Integração Front-End e Back-End</h2>
+      <p>Este projeto foi desenvolvido com o objetivo de praticar a integração entre <strong>front-end</strong>,
+        <strong>back-end</strong> e <strong>banco de dados</strong>. Ele simula a rolagem de dados de RPG e registra os
+        resultados em um histórico acessível ao usuário.</p>
+
+      <p>O funcionamento é simples: o usuário seleciona um tipo de dado (como D6, D20, etc.) e clica em um botão para
+        rolá-lo. Essa ação envia uma requisição ao back-end com a informação do dado escolhido. O servidor então gera um
+        número aleatório correspondente ao tipo de dado, salva o resultado em um banco de dados H2 e o envia de volta ao
+        front-end para exibição.</p>
+
+      <p>O banco H2 está configurado para criar automaticamente as tabelas necessárias ao iniciar a aplicação. Cada
+        jogada é registrada e exibida no histórico, permitindo ao usuário acompanhar os resultados anteriores.</p>
+
+      <p>Entre os principais conceitos abordados neste projeto, destacam-se:</p>
+      <ul>
+        <li>Comunicação entre front-end e back-end por meio de requisições HTTP;</li>
+        <li>Geração de números aleatórios no back-end com base nos parâmetros recebidos;</li>
+        <li>Persistência de dados utilizando um banco de dados relacional (H2);</li>
+        <li>Exibição dinâmica dos resultados e do histórico de jogadas no front-end.</li>
+      </ul>
+
+      <p>Este projeto oferece uma base sólida para entender a comunicação entre as diferentes camadas de uma aplicação
+        web moderna.</p>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>
