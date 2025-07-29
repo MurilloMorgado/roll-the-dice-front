@@ -8,11 +8,11 @@ import { RolagemDeDadosService } from '../../service/RolagemDeDadosService.servi
 import { firstValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Dado } from '../../models/dado';
-
+import { Dialog } from 'primeng/dialog';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonModule, Header, Footer, TableModule, CommonModule],
+  imports: [ButtonModule, Header, Footer, TableModule, CommonModule, Dialog],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -21,6 +21,7 @@ export class Home implements OnInit {
 
   dadoSelecionado: number | null = null;
   resultado: Dado | null = null;
+  visible: boolean = false;
   // Array de dados (lado)
   dados = [
     { label: 'D4', lados: 4 },
@@ -68,5 +69,9 @@ export class Home implements OnInit {
   selecionarDado(lados: number): void {
     this.dadoSelecionado = lados;
     console.log("Dado de " + lados + " lados selecionado");
+  }
+
+  showDialog() {
+    this.visible = true;
   }
 }

@@ -79,12 +79,24 @@ main {
   min-height: 400px;
   padding: 20px;
 
+  ::ng-deep .botao-historico .p-button {
+    font-size: 18px;
+    background: none;
+    background-image: url('/pergaminho.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+  }
+
+  ::ng-deep .botao-historico .p-button:hover {
+    background: none;
+    background-image: url('/pergaminho.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+  }
 }
 
-
-::ng-deep .p-button {
-  width: 200px;
-}
 
 /* Estilizaçao separada do botção */
 .button {
@@ -150,14 +162,12 @@ main {
   }
 
   .section-one {
-
+    width: 100vw;
     .titulo {
       font-size: 18px;
     }
 
-    .button {
-
-    }
+    .button {}
 
     .section-die {
 
@@ -166,7 +176,7 @@ main {
       }
     }
 
-    .resultado{
+    .resultado {
 
       img {
         width: 250px;
@@ -185,5 +195,73 @@ main {
 
 /* Tablet (portrait) */
 @media (min-width: 768px) and (max-width: 1024px) {
+    main {
+    flex-direction: column;
+  }
 
+  .section-one {
+    width: 100vw;
+    .titulo {
+      font-size: 28px;
+    }
+
+    .section-die {
+
+      .img-dado {
+        width: 80px;
+      }
+    }
+
+    .resultado {
+
+      img {
+        width: 350px;
+      }
+
+      p {
+        font-size: 70px;
+      }
+    }
+  }
+
+  .section-two {
+    min-height: 0px;
+  }
+}
+
+/* Desktop (landscape) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  .section-one {
+
+    .titulo {
+      font-size: 38px;
+    }
+
+    .button {}
+
+    .section-die {
+
+      .img-dado {
+        width: 80px;
+      }
+    }
+
+    .resultado {
+
+      img {
+        width: 420px;
+      }
+
+      p {
+        font-size: 100px;
+      }
+    }
+  }
+
+}
+
+/* Large Desktop (wide screens) */
+@media (min-width: 1441px) {
+  /* Estilos para telas maiores */
 }
