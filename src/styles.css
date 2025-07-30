@@ -1,21 +1,11 @@
-/* Reset básico */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "normalize.css/normalize.css";
 
-html, body {
-  font-family: Arial, sans-serif; /* Fonte padrão */
-  line-height: 1.5;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif+JP:wght@200..900&family=Preahvihear&display=swap');
 
-/* Remover estilos padrão de links */
-a {
-  text-decoration: none;
-  color: inherit;
+body {
+  background-color: #0E0E0E;
+  font-family: "Preahvihear", sans-serif;
 }
-
-/* Adicione outras regras de reset conforme necessário */
+body {
+  user-select: none;
+}

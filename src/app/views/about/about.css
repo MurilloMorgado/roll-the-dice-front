@@ -1,0 +1,85 @@
+main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/tavern-balcao.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-one {
+  background-image: url('/pergaminho-folha.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  margin: 20px 30px;
+  min-height: 600px;
+
+  .sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+    color: black;
+
+    h2 {
+      font-size: 26px;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 18px;
+    }
+
+  }
+
+}
+
+/* Mobile (phones) */
+@media (max-width: 767px) {
+
+  .section-one {
+
+    .sobre {
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      ul {
+        font-size: 12px;
+
+      }
+    }
+  }
+}
+
+/* Tablet (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .section-one {
+
+    .sobre {
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      ul {
+        font-size: 14px;
+
+      }
+    }
+  }
+}

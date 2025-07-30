@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -8,19 +8,20 @@ import { RolagemDeDadosService } from '../../service/RolagemDeDadosService.servi
 import { firstValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Dado } from '../../models/dado';
-
+import { Dialog } from 'primeng/dialog';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonModule, Header, Footer, TableModule, CommonModule],
+  imports: [ButtonModule, Header, Footer, TableModule, CommonModule, Dialog],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
 export class Home implements OnInit {
+  @ViewChild('audioDado') audioDado!: ElementRef<HTMLAudioElement>;
 
   dadoSelecionado: number | null = null;
   resultado: Dado | null = null;
-  rolandoDado: boolean = false;
+  visible: boolean = false;
   // Array de dados (lado)
   dados = [
     { label: 'D4', lados: 4 },
@@ -42,28 +43,25 @@ export class Home implements OnInit {
   }
 
   async buscarHistoricoDeRolagem() {
-        this.rolagemDeDadosService.listarHistorico().subscribe((historico) => {
-      this.historicoRolagem = historico;
+    this.rolagemDeDadosService.listarHistorico().subscribe((historico) => {
+      this.historicoRolagem = historico.reverse();
     });
   }
 
   async rolarDado() {
-    
+
     if (this.dadoSelecionado !== null) {
-      this.rolandoDado = true;
-      
+
       const dadoRolado = new Dado();
       dadoRolado.lado = this.dadoSelecionado;
 
- setTimeout(async () => {
+      setTimeout(async () => {
         this.resultado = await firstValueFrom(this.rolagemDeDadosService.rolarDado(dadoRolado));
 
-        // Atualiza o histórico de rolagem
         await this.buscarHistoricoDeRolagem();
-        
-        // Desativa a animação de rotação e mostra o dado final
-        this.rolandoDado = false;
-      }, 1000); // Duração da animação (1 segundo)
+
+        this.audioDado.nativeElement.play();
+      });
 
     }
   }
@@ -71,5 +69,9 @@ export class Home implements OnInit {
   selecionarDado(lados: number): void {
     this.dadoSelecionado = lados;
     console.log("Dado de " + lados + " lados selecionado");
+  }
+
+  showDialog() {
+    this.visible = true;
   }
 }
