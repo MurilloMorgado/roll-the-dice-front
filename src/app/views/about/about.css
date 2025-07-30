@@ -3,7 +3,7 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 91vh;
+  min-height: 91vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,14 +14,15 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 1200px;
+  max-width: 1200px;
+  margin: 20px 30px;
   min-height: 600px;
 
   .sobre {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 60px;
+    padding: 30px 40px;
     color: black;
 
     h2 {
@@ -33,9 +34,52 @@ main {
       font-size: 18px;
     }
 
-    ul {
-      
-    }
   }
 
+}
+
+/* Mobile (phones) */
+@media (max-width: 767px) {
+
+  .section-one {
+
+    .sobre {
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      ul {
+        font-size: 12px;
+
+      }
+    }
+  }
+}
+
+/* Tablet (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .section-one {
+
+    .sobre {
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      ul {
+        font-size: 14px;
+
+      }
+    }
+  }
 }

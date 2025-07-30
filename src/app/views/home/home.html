@@ -3,8 +3,34 @@
 
   <section class="section-one">
 
+    <div class="card flex justify-center historico">
+      <p-button class="botao-historico" (click)="showDialog()" label="Histórico" />
+      <p-dialog header="Histórico" [(visible)]="visible" [modal]="true"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '30vw' }" [draggable]="false"
+        [resizable]="false">
+        <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="350px"
+          [tableStyle]="{'min-width': '10rem'}" class="rpg-table">
+
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Dado</th>
+              <th>Resultado</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-historicoRolagem>
+            <tr>
+              <td>{{'D' + historicoRolagem.lado}}</td>
+              <td>{{historicoRolagem.resultado}}</td>
+            </tr>
+          </ng-template>
+
+        </p-table>
+      </p-dialog>
+    </div>
+
     <div class="titulo">
-      <h1>Select Die</h1>
+      <h1>Selecionar Dado</h1>
     </div>
 
     <div class="section-die">
@@ -14,41 +40,13 @@
     </div>
 
     <div class="button">
-      <button class="roll" (click)="rolarDado()">Roll</button>
+      <button class="roll" (click)="rolarDado()">Jogar</button>
       <audio #audioDado src="/dice-rolling.mp3"></audio>
     </div>
 
     <div class="resultado">
       <img src="/pergaminho.png" alt="">
       <p>{{resultado?.resultado}}</p>
-    </div>
-
-  </section>
-
-  <section class="section-two">
-
-    <div class="pergaminho">
-
-      <p-table [value]="historicoRolagem" [scrollable]="true" scrollHeight="350px" [tableStyle]="{'min-width': '10rem'}"
-        class="rpg-table">
-
-        <ng-template pTemplate="header">
-          <tr>
-            <th>Lado</th>
-            <th>Resultado</th>
-          </tr>
-        </ng-template>
-
-        <ng-template pTemplate="body" let-historicoRolagem>
-          <tr>
-            <td>{{historicoRolagem.lado}}</td>
-            <td>{{historicoRolagem.resultado}}</td>
-          </tr>
-        </ng-template>
-
-      </p-table>
-
-
     </div>
 
   </section>

@@ -20,12 +20,14 @@ main {
     font-family: "Cinzel Decorative", serif;
     font-size: 48px;
     color: #4b2e0f;
-    text-shadow: 2px 2px 4px rgba(134, 134, 134, 0.6);
+    text-shadow: 2px 2px 4px rgba(218, 218, 218, 0.767);
 
   }
 
   .section-die {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 
     .img-dado {
@@ -46,15 +48,13 @@ main {
     }
   }
 
-
-
   .resultado {
     position: relative;
     display: inline-block;
 
     img {
       display: block;
-      /* width: 300px;  */
+      width: 560px;
     }
 
     p {
@@ -67,26 +67,33 @@ main {
       color: #000;
       margin: 0;
       pointer-events: none;
-      /* impede que clique no texto afete algo */
     }
   }
 
 }
 
-.section-two {
+.historico {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 400px;
-  padding: 20px;
+  justify-content: end;
+  width: 100%;
 
+  ::ng-deep .botao-historico .p-button {
+    font-size: 18px;
+    background: none;
+    background-image: url('/pergaminho.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+  }
+
+  ::ng-deep .botao-historico .p-button:hover {
+    background: none;
+    background-image: url('/pergaminho.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+  }
 }
-
-
-::ng-deep .p-button {
-  width: 200px;
-}
-
 
 
 /* Estilizaçao separada do botção */
@@ -143,4 +150,138 @@ main {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+/* Mobile (phones) */
+@media (max-width: 767px) {
+
+  main {
+    flex-direction: column;
+  }
+
+  .section-one {
+    width: 100vw;
+
+    .historico {
+      order: 5;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .titulo {
+      font-size: 18px;
+    }
+
+    .button {}
+
+    .section-die {
+
+      .img-dado {
+        width: 60px;
+      }
+    }
+
+    .resultado {
+
+      img {
+        width: 250px;
+      }
+
+      p {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .historico {
+    padding: 5px;
+
+    ::ng-deep .botao-historico .p-button {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Tablet (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+
+  .section-one {
+    width: 100vw;
+
+    .titulo {
+      font-size: 28px;
+    }
+
+    .section-die {
+
+      .img-dado {
+        width: 80px;
+      }
+    }
+
+    .resultado {
+
+      img {
+        width: 350px;
+      }
+
+      p {
+        font-size: 70px;
+      }
+    }
+  }
+
+  .historico {
+    padding: 5px;
+
+    ::ng-deep .botao-historico .p-button {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Desktop (landscape) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  .section-one {
+
+    .titulo {
+      font-size: 38px;
+    }
+
+    .section-die {
+
+      .img-dado {
+        width: 80px;
+      }
+    }
+
+    .resultado {
+
+      img {
+        width: 360px;
+      }
+
+      p {
+        font-size: 100px;
+      }
+    }
+
+    .historico {
+      padding: 5px;
+
+      ::ng-deep .botao-historico .p-button {
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+
+/* Large Desktop (wide screens) */
+@media (min-width: 1441px) {
+  /* Estilos para telas maiores */
 }
